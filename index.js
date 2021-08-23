@@ -27,6 +27,7 @@ $.ajax({
     dataType: 'json',
     data: data,
     success: function (data) {
+        console.log("ALO");
         sweetAlert(data.status, data.response);
     }
 });
