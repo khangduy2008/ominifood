@@ -12,12 +12,12 @@ let phone = fromFeedback.txtPhone.value
 let message = fromFeedback.txtMsg.value
 
 
-let data = {
-    name : name,
-    email : email,
-    phone : phone,
-    message : message
-}
+// let data = {
+//     name : name,
+//     email : email,
+//     phone : phone,
+//     message : message
+// }
 
 
 
@@ -25,7 +25,12 @@ $.ajax({
     url: './sendEmail.php',
     method: 'POST',
     dataType: 'json',
-    data: data,
+    data: {
+        name : name,
+    email : email,
+    phone : phone,
+    message : message
+    },
     success: function (data) {
         console.log("ALO");
         sweetAlert(data.status, data.response);
